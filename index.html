@@ -30,8 +30,7 @@
 							alt="">
 					</div>
 					<div class="col fragment">
-						<img width="30%"
-							src="https://seeklogo.com/images/N/nestjs-logo-09342F76C0-seeklogo.com.png"
+						<img width="30%" src="https://seeklogo.com/images/N/nestjs-logo-09342F76C0-seeklogo.com.png"
 							alt="">
 					</div>
 				</div>
@@ -84,26 +83,38 @@
 			</section>
 
 			<section>
-				<canvas data-chart="line">
-					<!-- 
-					{
-					 "data": {
-					  "labels": ["January"," February"," March"," April"," May"," June"," July"],
-					  "datasets": [
-					   {
-						"data":[65,59,80,81,56,55,40],
-						"label":"My first dataset","backgroundColor":"rgba(20,220,220,.8)"
-					   },
-					   {
-						"data":[28,48,40,19,86,27,90],
-						"label":"My second dataset","backgroundColor":"rgba(220,120,120,.8)"
-					   }
-					  ]
-					 }, 
-					 "options": { "responsive": "true" }
-					}
-					-->
+				<h3>Mobile Frameworks</h3>
+				<canvas class="stretch" data-chart="pie">
+					,Flutter, React Native, Ionic, Nativescript, Xamarin
+					My first dataset, 40, 40, 20, 6, 8
+					My second dataset, 45, 40, 25, 4, 3
 				</canvas>
+			</section>
+			<section>
+				<h2>Ejemplo Ionic</h2>
+				<iframe height="500px" width="900px"
+					src="https://stackblitz.com/edit/ionic-v4?embed=1&file=src/app/app.component.ts"></iframe>
+			</section>
+			<section>
+				<h2>Ejemplo Flutter</h2>
+				<p class="codepen" data-height="513" data-theme-id="dark" data-default-tab="js,result"
+					data-user="elmarroco" data-slug-hash="RwWEpLW"
+					style="height: 513px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+					data-pen-title="RwWEpLW">
+					<span>See the Pen <a href="https://codepen.io/elmarroco/pen/RwWEpLW">
+							RwWEpLW</a> by Jose Masri (<a href="https://codepen.io/elmarroco">@elmarroco</a>)
+						on <a href="https://codepen.io">CodePen</a>.</span>
+				</p>
+				<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+			</section>
+
+			<section>
+				<h2>Ejemplo React Native</h2>
+				<div data-snack-id="@elmarroco/473ae7" data-snack-platform="android" data-snack-preview="true"
+					data-snack-theme="dark"
+					style="overflow:hidden;background:#212733;border:1px solid rgba(0,0,0,.08);border-radius:4px;height:505px;width:100%">
+				</div>
+				<script async src="https://snack.expo.io/embed.js"></script>
 			</section>
 		</div>
 	</div>
@@ -128,17 +139,20 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-			dependencies: [
-				{ src: 'plugin/chart/Chart.min.js' },
-				{ src: 'plugin/chart/csv2chart.js' },
-			],
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			mouseWheel: true,
 			chart: {
 				defaults: {
 					global: {
 						title: { fontColor: "#FFF" },
 						legend: {
+							position: "bottom",
+							labels: { fontColor: "#FFF" },
+						},
+						tooltips: {
 							labels: { fontColor: "#FFF" },
 						},
 					},
@@ -150,9 +164,14 @@
 				},
 				line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
 				bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
-				pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+				pie: { backgroundColor: [["rgba(23,55,83,.8)", "rgba(109,174,219,.8)", "rgba(40,146,215,.8)", "rgba(29,112,162,.8)", "rgba(0,43,54,.8)"]] },
 				radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
 			},
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			dependencies: [
+				{ src: 'plugin/chart/Chart.min.js' },
+				{ src: 'plugin/chart/csv2chart.js' },
+			],
 		});
 	</script>
 </body>
