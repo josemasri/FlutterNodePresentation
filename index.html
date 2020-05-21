@@ -12,8 +12,7 @@
 	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
 
 	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai.min.css">
 </head>
 
 <body>
@@ -61,10 +60,30 @@
 			</section>
 
 			<section>
-				<pre><code class="php" data-trim>
-				<?php 
-					echo "Hola mundo";
-				?>
+				<h2>Agregar código</h2>
+				<pre><code class="python" data-trim>
+					import threading
+					import time
+					sem = threading.Semaphore()
+
+					def fun1():
+						while True:
+							sem.acquire()
+							print(1)
+							sem.release()
+							time.sleep(0.25)
+
+					def fun2():
+						while True:
+							sem.acquire()
+							print(2)
+							sem.release()
+							time.sleep(0.25)
+
+					t = threading.Thread(target = fun1)
+					t.start()
+					t2 = threading.Thread(target = fun2)
+					t2.start()
 			</code></pre>
 			</section>
 
@@ -113,20 +132,25 @@
 				</div>
 			</section>
 			<section>
-				<div class="mxgraph" style="max-width:100%;border:1px solid transparent;"
-					data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-21T21:02:22.387Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;uKfKz2kXnEr3zaXjhIrK\&quot; version=\&quot;13.1.3\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}">
+				<h2>Diagrama Draw.io</h2>
+				<div class="mxgraph" style="max-width:100%;border:1px solid transparent; margin: 0 auto;"
+					data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;url&quot;:&quot;https://drive.google.com/uc?id=1yhIzOlV9lSfslmEVXz8o3KYkHlIXL9NZ&amp;export=download&quot;}">
 				</div>
+				<script type="text/javascript"
+					src="https://app.diagrams.net/embed2.js?&fetch=https%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1yhIzOlV9lSfslmEVXz8o3KYkHlIXL9NZ%26export%3Ddownload"></script>
 			</section>
 			<section>
 				<h2>Laravel vs Hibernate</h2>
 				<div style="width: 50%; margin: 0 auto;">
 					<script type="text/javascript"
-					src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script>
-				<script
-					type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "laravel", "geo": "", "time": "today 12-m" }, { "keyword": "/m/04t80p", "geo": "", "time": "today 12-m" }], "category": 0, "property": "" }, { "exploreQuery": "q=laravel,%2Fm%2F04t80p&date=today 12-m,today 12-m", "guestPath": "https://trends.google.com:443/trends/embed/" }); </script>
+						src="https://ssl.gstatic.com/trends_nrtr/2213_RC01/embed_loader.js"></script>
+					<script
+						type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "laravel", "geo": "", "time": "today 12-m" }, { "keyword": "/m/04t80p", "geo": "", "time": "today 12-m" }], "category": 0, "property": "" }, { "exploreQuery": "q=laravel,%2Fm%2F04t80p&date=today 12-m,today 12-m", "guestPath": "https://trends.google.com:443/trends/embed/" }); </script>
 				</div>
-				
-			<p style="font-size: 20px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi id dicta minima magni accusantium labore aut commodi porro ad a fuga dolorum, error in quae natus. Autem ipsa error modi.</p>
+
+				<p style="font-size: 20px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi id dicta
+					minima magni accusantium labore aut commodi porro ad a fuga dolorum, error in quae natus. Autem ipsa
+					error modi.</p>
 			</section>
 		</div>
 	</div>
