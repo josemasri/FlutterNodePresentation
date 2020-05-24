@@ -160,7 +160,7 @@ gulp.task('qunit', () => {
     let serverConfig = {
         root,
         port: 8009,
-        host: '0.0.0.0',
+        host: 'localhost',
         name: 'test-server'
     }
 
@@ -250,7 +250,7 @@ gulp.task('serve', () => {
     connect.server({
         root: root,
         port: port,
-        host: '0.0.0.0',
+        host: '127.0.0.1',
         livereload: true
     })
 
