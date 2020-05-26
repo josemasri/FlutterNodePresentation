@@ -503,7 +503,9 @@
           <p>Instalar la CLI de Nestjs</p>
           <pre><code data-trim data-noescape>
 						$> npm i -g @nestjs/cli
-					</code></pre>
+          </code></pre>
+          
+
           <p>Crear un proyecto</p>
           <pre><code data-trim data-noescape>
 						$> nest new project-name
@@ -607,6 +609,44 @@
             importe y conserva la misma instancia (Singleton). Se utiliza para trabajar con la lógica de negocio.</p>
         </section>
         <section data-transition="zoom">
+          <h2>Conexión DB</h2>
+          <div class="container">
+            <div class="col">
+              <h5 class="fragment fade-left">Mongoose</h5>
+              <pre><code class="typescript fragment fade-right" data-trim>
+                @Module({
+                  imports: [
+                  MongooseModule.forRoot(
+                    'mongodb://localhost/nest'
+                  )],
+                })
+                export class AppModule {}
+              </code></pre>
+            </div>
+            <div class="col">
+              <h5 class="fragment fade-left">TypeOrm</h5>
+              <pre><code class=" fragment fade-right typescript" data-trim>
+                @Module({
+                  imports: [
+                    TypeOrmModule.forRoot({
+                      type: 'mysql',
+                      host: 'localhost',
+                      port: 3306,
+                      username: 'root',
+                      password: 'root',
+                      database: 'test',
+                      entities: [],
+                      synchronize: true,
+                    }),
+                  ],
+                })
+                export class AppModule {}                
+              </code></pre>
+            </div>
+          </div>
+          <p>ORM - Mapeo de objetos relacional</p>
+        </section>
+        <section data-transition="zoom">
           <h2>Ejemplo NestJs</h2>
           <iframe height="500px" width="900px"
             src="https://stackblitz.com/edit/nestjs-example-configuration-management-p1jjie?embed=1&file=nestjs-example-configuration-management/src/main.ts&hideNavigation=1"
@@ -618,11 +658,6 @@
           <h2>Alternativas Móvil Multiplataforma</h2>
           <img style="width: 30rem; border-radius: 15px;"
             src="https://www.openxcell.com/wp-content/uploads/2019/05/Mobile-App-Frameworks-2020.png" alt="">
-        </section>
-        <section data-transition="convex">
-          <h2>Ionic</h2>
-          <iframe height="500px" width="900px"
-            src="https://stackblitz.com/edit/ionic-v4?embed=1&file=src/app/app.component.ts"></iframe>
         </section>
         <section data-transition="convex">
           <h2>Comaparación alternativas</h2>
@@ -705,6 +740,12 @@
             </tbody>
           </table>
         </section>
+        <section data-transition="convex">
+          <h2>Ionic</h2>
+          <iframe height="500px" width="900px"
+            src="https://stackblitz.com/edit/ionic-v4?embed=1&file=src/app/app.component.ts"></iframe>
+        </section>
+        
         <section data-transition="concave">
           <h2>Ejemplo Flutter</h2>
           <p class="codepen" data-height="513" data-theme-id="dark" data-default-tab="js,result" data-user="elmarroco"
